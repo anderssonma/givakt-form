@@ -23,7 +23,7 @@
 		// Create the defaults once
 		var pluginName = 'GivaktForm',
 				defaults = {
-					  url: 'https://docs.google.com/forms/d/1OVBAxKirWvr7rAdJTMIrfj2lEKNWuwfAVLV2UD3Yd5M/formResponse',
+					  url: 'https://docs.google.com/a/anderssonma.github.io/givakt-form/forms/d/1OVBAxKirWvr7rAdJTMIrfj2lEKNWuwfAVLV2UD3Yd5M/formResponse',
 						callback: 'formComplete',
 						formId: '#givakt-form',
 						inputClass: '.givakt-input',
