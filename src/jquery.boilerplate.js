@@ -13,7 +13,7 @@
 		// minified (especially when both are regularly referenced in your plugin).
 
 		// Create the defaults once
-		var pluginName = "GivaktForm",
+		var pluginName = 'GivaktForm',
 				defaults = {
 					  url: 'https://docs.google.com/forms/d/1OVBAxKirWvr7rAdJTMIrfj2lEKNWuwfAVLV2UD3Yd5M/formResponse',
 						callback: 'formComplete',
@@ -51,8 +51,8 @@
 						// you can add more functions like the one below and
 						// call them like so: this.yourOtherFunction(this.element, this.options).
 						this.noErrors = true;
-						this.inputs = this.options.formId + " " + this.options.inputClass;
-						this.sendBtn = this.options.formId + " " + this.options.submitBtn;
+						this.inputs = this.options.formId + ' ' + this.options.inputClass;
+						this.sendBtn = this.options.formId + ' ' + this.options.submitBtn;
 						var that = this;
 
 						$(this.inputs).on('blur', function() {
@@ -80,17 +80,15 @@
 				},
 
 				validateOnBlur: function (elem) {
-						var that = this;
-						var pattern = this.options.regExpPatterns[elem.data('validate')];
-						var elemVal = elem.val();
-						if (pattern && elemVal != '') {
+						var that = this,
+								pattern = this.options.regExpPatterns[elem.data('validate')],
+								elemVal = elem.val();
+						if (pattern && elemVal !== '') {
 								that.validateInput(elem, elemVal, pattern);
 						}
 				},
 
 				validateInput: function (elem, input, pattern) {
-					  console.log(input);
-					  console.log(pattern.test(input))
 						if (!pattern.test(input)) {
 								elem.addClass('error');
 								this.noErrors = false;
@@ -102,7 +100,7 @@
 				addData: function () {
 					  var finalData = {};
 					  $(this.inputs).each(function () {
-					  	finalData[$(this).data('field')] = $(this).val();
+								finalData[$(this).data('field')] = $(this).val();
 					  });
 						console.log(finalData);
 						return finalData;
@@ -143,8 +141,8 @@
 		// preventing against multiple instantiations
 		$.fn[ pluginName ] = function ( options ) {
 				return this.each(function() {
-						if ( !$.data( this, "plugin_" + pluginName ) ) {
-								$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
+						if ( !$.data( this, 'plugin_' + pluginName ) ) {
+								$.data( this, 'plugin_' + pluginName, new Plugin( this, options ) );
 						}
 				});
 		};
